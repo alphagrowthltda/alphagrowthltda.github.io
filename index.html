@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha Growth | Gestão de Tráfego e Soluções Digitais</title>
+  <meta
+    name="description"
+    content="Design da página, organização da página, criativos para a empresa, tráfego pago, SaaS, criação de site, planejamento de posts e criação de perfil em redes sociais novas."
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255, 140, 0, 0.16), transparent 25%),
+        radial-gradient(circle at left, rgba(255, 115, 0, 0.12), transparent 25%),
+        #050505;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      background: rgba(5, 5, 5, 0.84);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .logo-text span {
+      color: #ff8c00;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #d7d7d7;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff9d2a;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff8c00, #ff6a00);
+      color: #111;
+      box-shadow: 0 10px 30px rgba(255, 140, 0, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 140, 0, 0.45);
+      color: #ff9d2a;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 140, 0, 0.10);
+      border: 1px solid rgba(255, 140, 0, 0.20);
+      color: #ffb45b;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.06;
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      color: #bcbcbc;
+      font-size: 19px;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 18px;
+      padding: 18px;
+      color: #d8d8d8;
+      font-size: 14px;
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(22,22,22,0.92), rgba(8,8,8,0.95));
+      border: 1px solid rgba(255, 140, 0, 0.14);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .panel-badge {
+      background: rgba(255, 140, 0, 0.10);
+      color: #ffb45b;
+      border: 1px solid rgba(255, 140, 0, 0.18);
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .panel-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .panel-card {
+      background: #0a0a0a;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .panel-card small {
+      color: #8f8f8f;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .panel-card strong {
+      font-size: 30px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-title {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-text {
+      color: #a9a9a9;
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 140, 0, 0.28);
+    }
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: rgba(255, 140, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .card p {
+      color: #ababab;
+      font-size: 15px;
+    }
+
+    .dark-section {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .niches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .niche {
+      text-align: center;
+      background: #090909;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 20px;
+      font-weight: 600;
+      color: #e8e8e8;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .highlight-box,
+    .steps-box {
+      border-radius: 28px;
+      padding: 30px;
+    }
+
+    .highlight-box {
+      border: 1px solid rgba(255, 140, 0, 0.18);
+      background: linear-gradient(135deg, rgba(255, 140, 0, 0.12), rgba(255,255,255,0.02));
+    }
+
+    .steps-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .steps-box ul {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .steps-box li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: #d3d3d3;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .steps-box li:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      min-width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 140, 0, 0.08);
+      border: 1px solid rgba(255, 140, 0, 0.25);
+      color: #ff9d2a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .cta-clean {
+      padding: 100px 0 90px;
+    }
+
+    .cta-clean-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .cta-clean-box {
+      max-width: 720px;
+    }
+
+    .cta-clean-tag {
+      display: inline-block;
+      color: #ff9d2a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cta-clean-title {
+      font-size: 64px;
+      line-height: 1.02;
+      font-weight: 800;
+      margin-bottom: 22px;
+      max-width: 720px;
+    }
+
+    .cta-clean-text {
+      max-width: 620px;
+      color: #d2d2d2;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .cta-clean-note {
+      display: block;
+      margin-top: 12px;
+      color: #bdbdbd;
+      font-size: 13px;
+    }
+
+    .social-side {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icon-link {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 140, 0, 0.08);
+      border: 1px solid rgba(255, 140, 0, 0.24);
+      color: #ff9d2a;
+      transition: 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .social-icon-link:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 140, 0, 0.14);
+      border-color: rgba(255, 140, 0, 0.42);
+    }
+
+    .social-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .social-name {
+      color: #f1f1f1;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #9b9b9b;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .process,
+      .cta-clean-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .cta-clean-title {
+        font-size: 48px;
+      }
+
+      .social-side {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .cards-3,
+      .niches {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .cards-3,
+      .niches,
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .cta-clean-title {
+        font-size: 36px;
+        line-height: 1.08;
+      }
+
+      .cta-clean-text {
+        font-size: 16px;
+      }
+
+      .logo-img {
+        width: 58px;
+        height: 58px;
+      }
+
+      .logo-text {
+        font-size: 20px;
+      }
+
+      .cta-clean-wrap {
+        gap: 34px;
+      }
+
+      .social-side {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo-wrap">
+        <img src="imagem-site.png" alt="Logo Alpha Growth" class="logo-img" />
+        <div class="logo-text">Alpha <span>Growth</span></div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#nichos">Nichos</a>
+        <a href="#processo">Processo</a>
+        <a href="#contato" class="btn btn-primary">Falar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="tag">Soluções digitais para gerar clientes e crescimento</div>
+          <h1>Sua empresa com presença forte, estrutura profissional e mais vendas no digital.</h1>
+          <p>
+            Organizamos sua presença online, criamos páginas, desenvolvemos criativos,
+            estruturamos redes sociais e gerenciamos tráfego pago para transformar atenção em resultado.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://api.whatsapp.com/send?phone=5521966291818&text=Ol%C3%A1%2C+vim+pelo+Instagram.%0A%0AGostaria+de+um+diagn%C3%B3stico+estrat%C3%A9gico+para+entender+como+posso+aumentar+meus+clientes+com+previsibilidade."
+              target="_blank"
+            >
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">Design estratégico de página</div>
+            <div class="stat-card">Criação de sites e perfis</div>
+            <div class="stat-card">Criativos e conteúdo</div>
+            <div class="stat-card">Tráfego pago e estrutura digital</div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-top">
+            <div>
+              <div style="color:#8f8f8f; font-size:14px;">Painel estratégico</div>
+              <div style="font-size:26px; font-weight:700;">Sua marca mais profissional</div>
+            </div>
+            <div class="panel-badge">Imagem + Performance</div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="panel-card">
+              <small>Foco principal</small>
+              <strong>+ Autoridade</strong>
+              <div style="color:#b5b5b5;">Páginas e perfis organizados para transmitir confiança e gerar mais conversão.</div>
+            </div>
+
+            <div class="panel-card">
+              <small>Objetivo</small>
+              <strong>+ Vendas</strong>
+              <div style="color:#b5b5b5;">Mais estrutura, mais presença digital e campanhas direcionadas para atrair clientes certos.</div>
+            </div>
+
+            <div class="panel-card">
+              <small>Diferencial</small>
+              <div style="font-size:18px; color:#e9e9e9;">
+                Unimos design, organização, estratégia de conteúdo, site e tráfego pago para criar uma presença digital completa.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <h2 class="section-title">Serviços pensados para fazer sua empresa crescer</h2>
+        <p class="section-text">
+          Da estrutura da sua presença digital até a captação de clientes, entregamos uma solução completa para posicionar sua marca e aumentar seus resultados.
+        </p>
+
+        <div class="cards-3">
+
+  <div class="card">
+    <div class="icon"><img src="icon_transparente.png"></div>
+    <h3>Design da Página</h3>
+    <p>Criamos uma apresentação visual profissional para sua página.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon2_transparente.png"></div>
+    <h3>Organização da Página</h3>
+    <p>Estruturamos bio, destaques e identidade visual.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon3_transparente.png"></div>
+    <h3>Criativos para a Empresa</h3>
+    <p>Desenvolvemos artes e criativos para anúncios.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon4_transparente.png"></div>
+    <h3>Tráfego Pago</h3>
+    <p>Gestão de anúncios para gerar mais leads e vendas.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon5_transparente.png"></div>
+    <h3>SaaS</h3>
+    <p>Estruturação de soluções digitais e automações.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon6_transparente.png"></div>
+    <h3>Criação de Site</h3>
+    <p>Sites profissionais focados em conversão.</p>
+  </div>
+
+  <div class="card">
+   <div class="icon icon-posts"><img src="icon7_transparente." alt="Planejamento de Posts"></div>
+    <h3>Planejamento de Posts</h3>
+    <p>Estratégias para crescer no orgânico.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon8_transparente.png"></div>
+    <h3>Redes Sociais</h3>
+    <p>Criação e estruturação de perfis profissionais.</p>
+  </div>
+
+  <div class="card">
+    <div class="icon"><img src="icon9_transparente.png"></div>
+    <h3>Estratégia Digital</h3>
+    <p>Integração completa para escalar seu negócio.</p>
+  </div>
+
+</div>
+
+    <section id="nichos" class="dark-section">
+      <div class="container">
+        <h2 class="section-title">Atendemos marcas e profissionais que querem crescer de verdade</h2>
+        <p class="section-text">
+          Nosso trabalho é ideal para negócios que precisam de presença digital forte, imagem profissional e captação constante de clientes.
+        </p>
+
+        <div class="niches">
+          <div class="niche">Psicólogos</div>
+          <div class="niche">Restaurantes</div>
+          <div class="niche">Nutricionistas</div>
+          <div class="niche">Personal Trainers</div>
+          <div class="niche">Negócios Locais</div>
+          <div class="niche">Empresas de Serviços</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container process">
+        <div class="highlight-box">
+          <div style="color:#ffb45b; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">
+            Por que escolher a Alpha Growth
+          </div>
+          <h2 class="section-title" style="margin-bottom:16px;">
+            Mais do que tráfego: uma estrutura completa para sua empresa vender melhor.
+          </h2>
+          <p style="color:#d0d0d0; max-width:700px;">
+            Trabalhamos sua imagem, organização, presença digital e campanhas de aquisição para criar uma base sólida de crescimento.
+            O objetivo é fazer sua empresa parecer maior, transmitir mais confiança e converter mais.
+          </p>
+        </div>
+
+        <div class="steps-box">
+          <div style="color:#9b9b9b; font-size:14px;">Etapas</div>
+          <ul>
+            <li><span class="step-number">01</span> Diagnóstico da presença digital</li>
+            <li><span class="step-number">02</span> Organização da estrutura da marca</li>
+            <li><span class="step-number">03</span> Criação de páginas, perfis e criativos</li>
+            <li><span class="step-number">04</span> Planejamento e execução de tráfego</li>
+            <li><span class="step-number">05</span> Otimização e crescimento contínuo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="cta-clean">
+      <div class="container">
+        <div class="cta-clean-wrap">
+          <div class="cta-clean-box">
+            <span class="cta-clean-tag">Vamos estruturar sua marca</span>
+
+            <h2 class="cta-clean-title">
+              Quer deixar sua empresa mais profissional e vender mais no digital?
+            </h2>
+
+            <p class="cta-clean-text">
+              Entre em contato e descubra como podemos organizar sua presença online,
+              fortalecer sua imagem e gerar mais clientes para o seu negócio.
+            </p>
+
+            <a
+              class="btn btn-primary"
+              href="https://api.whatsapp.com/send?phone=5521966291818&text=Ol%C3%A1%2C+vim+pelo+Instagram.%0A%0AGostaria+de+um+diagn%C3%B3stico+estrat%C3%A9gico+para+entender+como+posso+aumentar+meus+clientes+com+previsibilidade."
+              target="_blank"
+            >
+              Solicitar atendimento
+            </a>
+
+            <small class="cta-clean-note">
+              Atendimento personalizado para empresas e profissionais.
+            </small>
+          </div>
+
+          <div class="social-side">
+            <div class="social-item">
+              <a
+                class="social-icon-link"
+                href="https://instagram.com/alphagrowth.ltda"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" class="social-icon" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+              <span class="social-name">Instagram</span>
+            </div>
+
+            <div class="social-item">
+              <a
+                class="social-icon-link"
+                href="https://x.com/alphagrowthltda"
+                target="_blank"
+                aria-label="X"
+              >
+                <svg viewBox="0 0 24 24" class="social-icon" fill="currentColor">
+                  <path d="M18.901 2H21l-4.588 5.244L21.81 22h-6.29l-4.925-6.44L4.96 22H2.86l4.907-5.608L2.19 2h6.45l4.452 5.86L18.901 2Zm-1.103 18.118h1.744L7.693 3.787H5.822l11.976 16.331Z"/>
+                </svg>
+              </a>
+              <span class="social-name">X / Twitter</span>
+            </div>
+
+            <div class="social-item">
+              <a
+                class="social-icon-link"
+                href="https://github.com/alphagrowthltda"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" class="social-icon" fill="currentColor">
+                  <path d="M12 .5C5.649.5.5 5.649.5 12a11.5 11.5 0 0 0 7.861 10.922c.575.104.786-.25.786-.556 0-.274-.01-1-.015-1.963-3.198.695-3.873-1.542-3.873-1.542-.523-1.327-1.277-1.68-1.277-1.68-1.044-.714.08-.699.08-.699 1.154.081 1.761 1.185 1.761 1.185 1.026 1.758 2.692 1.25 3.348.956.104-.743.401-1.25.729-1.537-2.553-.29-5.238-1.277-5.238-5.685 0-1.256.449-2.283 1.184-3.088-.118-.291-.513-1.462.113-3.048 0 0 .965-.309 3.162 1.179a10.96 10.96 0 0 1 5.758 0c2.195-1.488 3.159-1.179 3.159-1.179.628 1.586.233 2.757.115 3.048.737.805 1.183 1.832 1.183 3.088 0 4.419-2.69 5.392-5.253 5.676.412.355.78 1.056.78 2.129 0 1.538-.014 2.778-.014 3.157 0 .309.207.666.792.553A11.503 11.503 0 0 0 23.5 12C23.5 5.649 18.351.5 12 .5Z"/>
+                </svg>
+              </a>
+              <span class="social-name">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <footer>
+    © 2026 Alpha Growth. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
